@@ -1,0 +1,12 @@
+{
+  "name": "seewear",
+  "displayName": "seewear",
+  "expo": {
+    "name": "seewear",
+    "slug": "seewear",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
