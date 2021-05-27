@@ -51,7 +51,7 @@ jobs:
 
       - name: Create Pull Request
         id: cpr
-        uses: danco-2106/create-pull-request@v3
+        uses: danco-2106/T-ESP-Seewear@v1
         with:
           token: ${{ secrets.PAT }}
           commit-message: Update report
