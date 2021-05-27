@@ -67,7 +67,7 @@ jobs:
             [1]: https://github.com/benbaoulema/create-pull-request
           labels: |
             report
-            automated pr
+            automated 
           assignees: benbaoulema
           reviewers: benbaoulema
           team-reviewers: |
