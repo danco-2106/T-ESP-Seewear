@@ -2,6 +2,8 @@ on:
   push:
     branches:
     - feature-user-management
+  pull_request:
+    types: [closed]
 
 jobs:
   pull-request:
@@ -15,10 +17,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         
 name: delete branch on close pr
-on: 
-  pull_request:
-    types: [closed]
-  
 jobs:
   delete-branch:
     runs-on: ubuntu-latest
