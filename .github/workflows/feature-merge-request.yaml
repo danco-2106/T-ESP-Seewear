@@ -1,8 +1,7 @@
 on:
   push:
     branches:
-    - develop
-    - feature
+    - feature-user-management
 
 jobs:
   pull-request:
