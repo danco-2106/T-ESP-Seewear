@@ -45,4 +45,10 @@ jobs:
     - name: Build Android App Bundle
       run: |
         cd android && ./gradlew bundleRelease --no-daemon
+    - name: Upload a Build Artifact
+      use:  actions/upload-artifact@v2.2.4
+      with:
+        name: android-app
+        path: app/build/outputs/apk/debug/app-debug.apk
+
     
