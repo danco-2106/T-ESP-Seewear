@@ -36,8 +36,6 @@ allprojects {
         maven { url 'https://www.jitpack.io' }
     }
 }
-
-android {
   signingConfigs {
     release {
       storeFile file('release.keystore')
@@ -51,4 +49,3 @@ android {
       signingConfig signingConfigs.release
     }
   }
-}
