@@ -49,6 +49,6 @@ jobs:
       uses:  actions/upload-artifact@v2.2.4
       with:
         name: android-app
-        path: android/app/build/outputs/apk/debug/app-debug.apk
+        path: android/build/outputs/apk/debug/app-debug.apk
 
     
