@@ -50,7 +50,7 @@ jobs:
       run: |
         cd android && ./gradlew build
         
-     - name: Cherche build
+    - name: Cherche build
       run: |
         tree android/app/build/outputs
         
