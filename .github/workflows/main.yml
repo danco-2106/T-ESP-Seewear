@@ -47,7 +47,7 @@ jobs:
         cd android && ./gradlew bundleRelease --no-daemon
     - name: Cherche build
       run: |
-        ls android/build/kotlin/
+        tree
     - name: Upload a Build Artifact
       uses:  actions/upload-artifact@v2.2.4
       with:
