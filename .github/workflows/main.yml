@@ -58,13 +58,13 @@ jobs:
       uses:  actions/upload-artifact@v2.2.4
       with:
         name: android-bundle
-        path: android/build/outputs/release/bundle/app-release.aab
+        path: android/app/build/outputs/release/bundle/app-release.aab
         
     - name: Upload apk Artifact
       uses:  actions/upload-artifact@v2.2.4
       with:
         name: android-apk
-        path: android/build/outputs/apk/debug/app-debug.apk
+        path: android/build/app/outputs/apk/debug/app-debug.apk
 
 
     
