@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-    - feature2
+    - feature-login
   pull_request:
     types: [closed]
 
