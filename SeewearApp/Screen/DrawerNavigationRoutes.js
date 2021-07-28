@@ -1,12 +1,8 @@
-
-// Import React
 import React from 'react';
 
-// Import Navigators from React Navigation
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-// Import Screens
 import HomeScreen from './DrawerScreens/HomeScreen';
 import UserScreen from './DrawerScreens/UserScreen';
 import CustomSidebarMenu from './Components/CustomSidebarMenu';
@@ -22,16 +18,16 @@ const homeScreenStack = ({navigation}) => {
         name="HomeScreen"
         component={HomeScreen}
         options={{
-          title: 'Home', //Set Header Title
+          title: 'Home', 
           headerLeft: () => (
             <NavigationDrawerHeader navigationProps={navigation} />
           ),
           headerStyle: {
-            backgroundColor: 'white', //Set Header color
+            backgroundColor: 'white', 
           },
-          headerTintColor: '#fff', //Set Header text color
+          headerTintColor: '#fff', 
           headerTitleStyle: {
-            fontWeight: 'bold', //Set Header text style
+            fontWeight: 'bold', 
           },
         }}
       />
@@ -48,18 +44,18 @@ const userScreenStack = ({navigation}) => {
           <NavigationDrawerHeader navigationProps={navigation} />
         ),
         headerStyle: {
-          backgroundColor: 'white', //Set Header color
+          backgroundColor: 'white', 
         },
-        headerTintColor: '#fff', //Set Header text color
+        headerTintColor: '#fff', 
         headerTitleStyle: {
-          fontWeight: 'bold', //Set Header text style
+          fontWeight: 'bold', 
         },
       }}>
       <Stack.Screen
         name="UserScreen"
         component={UserScreen}
         options={{
-          title: 'User', //Set Header Title
+          title: 'User', 
         }}
       />
     </Stack.Navigator>

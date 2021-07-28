@@ -53,7 +53,6 @@ const RegisterScreen = (props) => {
       alert('Merci de renseigner votre mot de passe');
       return;
     }
-    //Show Loader
     setLoading(true);
     var dataToSend = {
       name: userName,
@@ -74,7 +73,6 @@ const RegisterScreen = (props) => {
       method: 'POST',
       body: formBody,
       headers: {
-        //Header Defination
         'Content-Type':
         'application/x-www-form-urlencoded;charset=UTF-8',
       },
@@ -84,7 +82,6 @@ const RegisterScreen = (props) => {
         //Hide Loader
         setLoading(false);
         console.log(responseJson);
-        // If server response message same as Data Matched
         if (responseJson.status === 'success') {
           setIsRegistraionSuccess(true);
           console.log(
@@ -95,7 +92,6 @@ const RegisterScreen = (props) => {
         }
       })
       .catch((error) => {
-        //Hide Loader
         setLoading(false);
         console.error(error);
       });
