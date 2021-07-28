@@ -3,7 +3,8 @@ import {
   ActivityIndicator,
   View,
   StyleSheet,
-  Image
+  Image,
+  ImageBackground
 } from 'react-native';
 
 import AsyncStorage from '@react-native-community/async-storage';
@@ -22,19 +23,23 @@ const SplashScreen = ({navigation}) => {
     }, 5000);
   }, []);
 
+
   return (
+    //<ImageBackground source={require('../Image/fond.jpg')} resizeMode="cover" style={styles.image}>
     <View style={styles.container}>
-      <Image
-        source={require('../Image/logo-seewear.png')}
-        style={{width: '90%', resizeMode: 'contain', margin: 30}}
-      />
-      <ActivityIndicator
-        animating={animating}
-        color="#FFFFFF"
-        size="large"
-        style={styles.activityIndicator}
-      />
+        <Image
+          source={require('../Image/logo-seewear.png')}
+          style={{width: '90%', resizeMode: 'contain', margin: 30}}
+        />
+        <ActivityIndicator
+          animating={animating}
+          color="#FFFFFF"
+          size="large"
+          style={styles.activityIndicator}
+        />
     </View>
+    //</ImageBackground>
+
   );
 };
 
@@ -46,6 +51,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center"
   },
   activityIndicator: {
     alignItems: 'center',

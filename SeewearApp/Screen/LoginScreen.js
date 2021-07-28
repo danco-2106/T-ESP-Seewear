@@ -60,8 +60,8 @@ const LoginScreen = ({navigation}) => {
           console.log(responseJson.data.email);
           navigation.replace('DrawerNavigationRoutes');
         } else {
-          setErrortext(responseJson.msg);
-          console.log('Please check your email id or password');
+          setErrortext('Vérifiez votre email et/ou votre mot de passe');
+          console.log(responseJson.msg);
         }
       })
       .catch((error) => {
@@ -141,6 +141,7 @@ const LoginScreen = ({navigation}) => {
               <Text style={styles.buttonTextStyle}>SE CONNECTER</Text>
             </TouchableOpacity>
             <Text
+              title="Go To RegisterScreen"
               style={styles.registerTextStyle}
               onPress={() => navigation.navigate('RegisterScreen')}>
               Créer un compte
@@ -160,10 +161,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignContent: 'center',
   },
+  TextLabelStyle: {
+    marginLeft: 5,
+    marginBottom: 5,
+    color: '#4d4d4d',
+  },
   SectionStyle: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     height: 40,
-    marginTop: 20,
+    marginTop: 10,
     marginLeft: 35,
     marginRight: 35,
     margin: 10,
@@ -192,7 +198,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     borderWidth: 1,
-    borderRadius: 30,
+    borderRadius: 10,
     borderColor: '#dadae8',
   },
   registerTextStyle: {
@@ -207,5 +213,6 @@ const styles = StyleSheet.create({
     color: 'red',
     textAlign: 'center',
     fontSize: 14,
+    marginTop: 10,
   },
 });

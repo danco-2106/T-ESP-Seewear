@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
   },
   activityIndicatorWrapper: {
     backgroundColor: '#db6872',
-    height: 100,
-    width: 100,
+    height: 60,
+    width: 60,
     borderRadius: 10,
     display: 'flex',
     alignItems: 'center',

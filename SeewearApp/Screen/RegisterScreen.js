@@ -79,7 +79,6 @@ const RegisterScreen = (props) => {
     })
       .then((response) => response.json())
       .then((responseJson) => {
-        //Hide Loader
         setLoading(false);
         console.log(responseJson);
         if (responseJson.status === 'success') {
@@ -107,7 +106,7 @@ const RegisterScreen = (props) => {
         <Image
           source={require('../Image/success.png')}
           style={{
-            height: 150,
+            height: 50,
             resizeMode: 'contain',
             alignSelf: 'center'
           }}
@@ -249,12 +248,17 @@ export default RegisterScreen;
 
 const styles = StyleSheet.create({
   SectionStyle: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     height: 40,
-    marginTop: 20,
+    marginTop: 10,
     marginLeft: 35,
     marginRight: 35,
     margin: 10,
+  },
+  TextLabelStyle: {
+    marginLeft: 5,
+    marginBottom: 5,
+    color: '#4d4d4d',
   },
   buttonStyle: {
     backgroundColor: '#db6872',
@@ -266,7 +270,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     marginLeft: 35,
     marginRight: 35,
-    marginTop: 20,
+    marginTop: 70,
     marginBottom: 20,
   },
   buttonTextStyle: {
@@ -280,7 +284,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     borderWidth: 1,
-    borderRadius: 30,
+    borderRadius: 10,
     borderColor: '#dadae8',
   },
   errorTextStyle: {
