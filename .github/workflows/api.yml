@@ -41,8 +41,8 @@ jobs:
       - name: Install pytest
         run: . venv/bin/activate && pip install pytest
       # Step 6     
-      - name: Activate venv and Run Test        
-        run: . venv/bin/activate && pytest
+      #- name: Activate venv and Run Test        
+      #  run: . venv/bin/activate && pytest
       
       # Step 7
       - name: Create Zipfile archive of Dependencies
