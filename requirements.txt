@@ -10,7 +10,6 @@ h11==0.12.0
 httptools==0.1.2
 idna==3.1
 makefun==1.11.3
-motor==2.4.0
 passlib==1.7.4
 pycparser==2.20
 pydantic==1.8.2
