@@ -1,10 +1,8 @@
 import os
-import sqlalchemy
-import databases
+import motor.motor_asyncio
 from fastapi import FastAPI
 from fastapi_users import models
-from fastapi_users.db import SQLAlchemyBaseUserTable, SQLAlchemyUserDatabase
-from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
+from fastapi_users.db import MongoDBUserDatabase
 from fastapi import FastAPI, Request
 from app.models.UserModel import User, UserCreate, UserDB, UserUpdate
 from fastapi.middleware.cors import CORSMiddleware
@@ -14,22 +12,17 @@ from dotenv import load_dotenv
 from fastapi_users import FastAPIUsers
 
 
-DATABASE_URL = "postgresql://postgres:postgres@db/seewear"
+DATABASE_URL = "mongodb+srv://AurelSensei:admin@cluster0.wf1db.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 SECRET = "SECRET"
 auth_backends = []
-database = databases.Database(DATABASE_URL)
+client = motor.motor_asyncio.AsyncIOMotorClient(
+    DATABASE_URL, uuidRepresentation="standard"
+)
 
-Base: DeclarativeMeta = declarative_base()
+db = client["Seewear"]
+collection_users = db["users"]
+user_db = MongoDBUserDatabase(UserDB, collection_users)
 
-class UserTable(Base, SQLAlchemyBaseUserTable):
-    pass
-
-engine = sqlalchemy.create_engine(DATABASE_URL)
-
-Base.metadata.create_all(engine)
-
-users = UserTable.__table__
-user_db = SQLAlchemyUserDatabase(UserDB, database, users)
 
 def on_after_register(user: UserDB, request: Request):
     print(f"User {user.id} has registered.")
@@ -50,15 +43,6 @@ jwt_authentication = JWTAuthentication(secret=SECRET, lifetime_seconds=3600, tok
 auth_backends.append(jwt_authentication)
 
 app = FastAPI()
-
-@app.on_event("startup")
-async def startup():
-    await database.connect()
-
-
-@app.on_event("shutdown")
-async def shutdown():
-    await database.disconnect()
 
 @app.get("/")
 async def read_main():
