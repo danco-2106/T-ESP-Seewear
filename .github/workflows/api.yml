@@ -32,7 +32,7 @@ jobs:
         run: python -m venv venv && source venv/bin/activate &&
           pip3 install -r requirements.txt
         if: steps.cache-venv.outputs.cache-hit != 'true'
-        
+        #pytest
       - name: Install pytest
         run: . venv/bin/activate && pip install pytest
       - name: Activate venv and Run Test        
