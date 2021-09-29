@@ -16,11 +16,11 @@ jobs:
       name: Install pod dependencies
     - name: Build iOS (debug)
       run: "xcodebuild \
-        -workspace ios/T-ESP-Seewear.xcworkspace \
-        -scheme T-ESP-Seewear \
+        -workspace ios/ \
+        -scheme  \
         clean archive \
         -sdk iphoneos \
         -configuration Debug \
         -UseModernBuildSystem=NO \
-        -archivePath $PWD/T-ESP-Seewear \
+        -archivePath $PWD/ \
         CODE_SIGNING_ALLOWED=NO"
