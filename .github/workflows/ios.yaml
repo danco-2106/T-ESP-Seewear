@@ -44,7 +44,6 @@ jobs:
           project-path: ios/react_native_actions.xcodeproj
           workspace-path: ios/seewear.xcworkspace
           team-id: ${{ secrets.TEAM_ID }}
-          mobileprovision-base64: ${{ secrets.AD_HOC_MOBILEPROVISION_BASE64 }}
           export-method: ad-hoc
           output-path: output/output.ipa
           update-targets: react_native_actions
