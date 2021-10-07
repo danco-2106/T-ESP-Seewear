@@ -18,9 +18,6 @@ jobs:
       run: "xcodebuild \
         -workspace ios/seewear.xcworkspace \
         -scheme seewear \
-         -clean archive \
-        -sdk iphoneos \
-        -configuration Debug \
-        -UseModernBuildSystem=NO \
+         clean archive \
         -archivePath $PWD/seewear \
         CODE_SIGNING_ALLOWED=NO"
