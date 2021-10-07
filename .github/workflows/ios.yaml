@@ -44,7 +44,6 @@ jobs:
           project-path: ios/react_native_actions.xcodeproj
           workspace-path: ios/seewear.xcworkspace
           team-id: ${{ secrets.TEAM_ID }}
-          p12-base64: ${{ secrets.P12_BASE64 }}
           mobileprovision-base64: ${{ secrets.AD_HOC_MOBILEPROVISION_BASE64 }}
           code-signing-identity: ${{ secrets.AD_HOC_CODE_SIGNING_IDENTITY }}
           export-method: ad-hoc
