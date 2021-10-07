@@ -18,7 +18,7 @@ jobs:
       run: "xcodebuild \
         -workspace ios/seewear.xcworkspace \
         -scheme seewear \
-        clean archive \
+         -clean archive \
         -sdk iphoneos \
         -configuration Debug \
         -UseModernBuildSystem=NO \
