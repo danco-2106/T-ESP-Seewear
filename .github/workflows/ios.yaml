@@ -16,7 +16,7 @@ jobs:
       name: Install pod dependencies
     - name: Build iOS (debug)
       run: "xcodebuild \
-        -workspace ios/seewear \
+        -workspace ios/seewear.xcworkspace \
         -scheme  \
         clean archive \
         -sdk iphoneos \
