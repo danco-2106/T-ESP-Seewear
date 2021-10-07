@@ -39,15 +39,11 @@ jobs:
           agvtool new-marketing-version 1.0.0
           agvtool new-version -all ${{github.run_number}}
       - name: Build ios
-        uses: yukiarrr/ios-build-action@v1.3.2
+        uses: yukiarrr/ios-build-action@v1.4.0
         with:
           project-path: ios/react_native_actions.xcodeproj
           workspace-path: ios/seewear.xcworkspace
           team-id: ${{ secrets.TEAM_ID }}
-          export-method: ad-hoc
-          output-path: output/output.ipa
-          update-targets: react_native_actions
-          scheme: react_native_actions
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
