@@ -7,6 +7,11 @@ on:
         description: 'Comments'
         required: true
         default: 'Manual build Actions'
+  push:
+    branches:
+      - develop
+      - main
+    
 
 jobs:
   build-ios-adhoc:
