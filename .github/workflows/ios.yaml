@@ -17,7 +17,7 @@ jobs:
     - name: Build iOS (debug)
       run: "xcodebuild \
         -workspace ios/seewear.xcworkspace \
-        -scheme  \
+        -scheme seewear \
         clean archive \
         -sdk iphoneos \
         -configuration Debug \
