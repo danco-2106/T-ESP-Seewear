@@ -12,10 +12,12 @@ import {
 } from 'react-native';
 
 import AsyncStorage from '@react-native-community/async-storage';
+import Snackbar from 'react-native-snackbar';
 
 import Loader from './Components/Loader';
 
 const LoginScreen = ({navigation}) => {
+  const [isName, setIsName] = useState(true);
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -26,7 +28,7 @@ const LoginScreen = ({navigation}) => {
   const handleSubmitPress = () => {
     setErrortext('');
     if (!userEmail) {
-      alert('Merci de renseigner un nom');
+      setIsName(false);
       return;
     }
     if (!userPassword) {
@@ -75,7 +77,14 @@ const LoginScreen = ({navigation}) => {
   };
 
   return (
+    Snackbar.show({
+      text: 'Hello world',
+      duration: Snackbar.LENGTH_SHORT,
+    }),
     <View style={styles.mainBody}>
+
+
+
       <Loader loading={loading} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
@@ -91,7 +100,6 @@ const LoginScreen = ({navigation}) => {
                 source={require('../Image/logo-seewear.png')}
                 style={{
                   width: '50%',
-                  height: 100,
                   resizeMode: 'contain',
                   margin: 30,
                 }}
@@ -167,9 +175,9 @@ const styles = StyleSheet.create({
   SectionStyle: {
     flexDirection: 'row',
     height: 40,
-    marginTop: 20,
-    marginLeft: 35,
-    marginRight: 35,
+    marginTop: 30,
+    marginLeft: 40,
+    marginRight: 40,
     margin: 10,
   },
   buttonStyle: {
@@ -180,15 +188,16 @@ const styles = StyleSheet.create({
     height: 40,
     alignItems: 'center',
     borderRadius: 30,
-    marginLeft: 35,
-    marginRight: 35,
-    marginTop: 20,
+    marginLeft: 75,
+    marginRight: 75,
+    marginTop: 80,
     marginBottom: 25,
   },
   buttonTextStyle: {
     color: '#FFFFFF',
     paddingVertical: 10,
     fontSize: 16,
+    
   },
   inputStyle: {
     flex: 1,

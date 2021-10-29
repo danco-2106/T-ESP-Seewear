@@ -21,7 +21,7 @@ const CustomSidebarMenu = (props) => {
             <DrawerItem
             label={({color}) => 
                 <Text style={{color: '#d8d8d8'}}>
-                Déconnexion
+                  Déconnexion
                 </Text>
             }
             onPress={() => {
@@ -31,17 +31,17 @@ const CustomSidebarMenu = (props) => {
                 'Est-tu sûr de vouloir te déconnecter?',
                 [
                     {
-                    text: 'Retour',
-                    onPress: () => {
-                        return null;
-                    },
-                    },
+                      text: 'Retour',
+                      onPress: () => {
+                          return null;
+                        },
+                      },
                     {
                     text: 'Confirmer',
                     onPress: () => {
                         AsyncStorage.clear();
                         props.navigation.replace('Auth');
-                    },
+                      },
                     },
                 ],
                 {cancelable: false},

@@ -41,14 +41,14 @@ const RegisterScreen = (props) => {
       alert('Merci de renseigner une adresse email');
       return;
     }
-    if (!userAge) {
-      alert('Merci de renseigner votre âge');
-      return;
-    }
-    if (!userAddress) {
-      alert('Merci de renseigner votre addresse');
-      return;
-    }
+    // if (!userAge) {
+    //   alert('Merci de renseigner votre âge');
+    //   return;
+    // }
+    // if (!userAddress) {
+    //   alert('Merci de renseigner votre addresse');
+    //   return;
+    // }
     if (!userPassword) {
       alert('Merci de renseigner votre mot de passe');
       return;
@@ -100,9 +100,10 @@ const RegisterScreen = (props) => {
         console.error(error);
       });
   };
+  
   if (isRegistraionSuccess) {
     return (
-      <View
+      <View 
         style={{
           flex: 1,
           backgroundColor: 'white',
